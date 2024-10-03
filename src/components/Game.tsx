@@ -6,6 +6,7 @@ import { Preloader } from '@/scenes/Preloader';
 import { MainMenu } from '@/scenes/MainMenu';
 import { GameOver } from '@/scenes/GameOver';
 import { Game as MainGame } from '@/scenes/Game';
+import { Hud } from '@/scenes/Hud';
 
 export const DEFAULT_WIDTH: number = 640
 export const DEFAULT_HEIGHT: number = 480
@@ -21,7 +22,8 @@ const Game = () => {
                 Preloader,
                 MainMenu,
                 MainGame,
-                GameOver
+                GameOver,
+                Hud,
             ],
             render: {
                 pixelArt: true,
@@ -31,6 +33,13 @@ const Game = () => {
                 autoRound: true,
             },
             pixelArt: true,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { x: 0, y: 300 },
+                    debug: true,
+                }
+            }
 
         };
         const game = new Phaser.Game(config)

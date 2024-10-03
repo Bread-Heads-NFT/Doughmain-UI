@@ -31,7 +31,7 @@ export default function Home() {
         <WalletProvider wallets={[adapter]} autoConnect>
           <TipLinkWalletModalProvider title="Hello Phaser" logoSrc="/assets/logo.png" theme={TipLinkModalTheme.DARK}>
             <UmiProvider>
-              <div className="p-5 w-full">
+              <div className="p-5 w-11/12">
                 <WalletMultiButton className="ml-auto" />
                 <Game />
               </div>
